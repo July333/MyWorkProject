@@ -20,11 +20,18 @@ body {
 body::-webkit-scrollbar {
   width: 0 !important;
 }
-header {
+#mainD {
   overflow: hidden;
 }
+.row {
+  margin: 0px !important;
+}
+header {
+  overflow: hidden;
+  padding: 0px !important;
+  margin-bottom: 25px;
+}
 header .form-group {
-  width: 65%;
   text-align: center;
   padding: 0px;
   position: relative;
@@ -42,6 +49,7 @@ header .form-group #search {
   z-index: 1;
 }
 header .form-group #inp {
+  min-width: 190px;
   display: inline-block;
   background: rgba(83, 154, 247, 0.733);
   border: none;
@@ -58,17 +66,21 @@ header .form-group #inp {
   font-size: 1.5em;
   font-weight: bold;
 }
+#myGrid {
+  padding: 0%;
+}
 #myGrid .grid-container {
   display: grid;
-  padding: 5px;
+  text-align: center;
+  align-items: stretch;
 }
 #myGrid .grid-container .grid-item {
   background-color: rgba(247, 247, 247, 0.233);
   font-size: 1.2em;
   text-align: center;
   margin: 5%;
-  min-height: 190px;
-  padding: 10%;
+  min-height: 120px;
+  padding: 15px;
 }
 #myGrid .grid-container .grid-item * {
   color: #ffffff;
@@ -78,7 +90,7 @@ header .form-group #inp {
 }
 #myGrid .grid-container .grid-item h1 {
   font-size: 1.5em;
-  margin-top: 50%;
+  padding: 23%;
 }
 #myGrid .grid-container .grid-item h1 .dayTemp {
   font-size: 1.8em;
@@ -87,7 +99,8 @@ header .form-group #inp {
   float: left;
 }
 #myGrid .grid-container .grid-item h3 {
-  font-size: 1em;
+  padding: 13%;
+  font-size: 1.2em;
 }
 #myGrid .grid-container .grid-item i {
   font-size: 3em;
@@ -111,7 +124,7 @@ header .form-group #inp {
 @media (max-width: 575px) {
   /* smartphone */
   #myGrid .grid-container {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
   #myGrid .grid-container .grid-item {
     margin-left: 25%;
@@ -120,7 +133,7 @@ header .form-group #inp {
 }
 @media (min-width: 575px) {
   .grid-container {
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
   }
   .img-container input[type=image] {
     -webkit-transform: translateX(-100%) rotate(-90deg);
@@ -143,8 +156,4 @@ header .form-group #inp {
   .form-group {
     float: right;
   }
-}
-.myGrid,
-.img-container {
-  padding: 10%;
 }

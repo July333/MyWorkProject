@@ -23,10 +23,10 @@ $('#inp').on('keyup', function (e) {
     }
 });
 $('#search').on('click', function () {
-        let city = $('#inp').val();
-        getApi(city);
-        futureWeather(city);
-        $('#inp').val("");
+    let city = $('#inp').val();
+    getApi(city);
+    futureWeather(city);
+    $('#inp').val("");
 });
 const getApi = async (selectedCity) => {
     const res = await fetch('https://api.openweathermap.org/data/2.5/weather?q='

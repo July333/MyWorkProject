@@ -13,8 +13,8 @@ body {
     background-image: url("../images/blue.jpg");
     background-color: @main-color;
     background-attachment: fixed;
-    margin-top:1%;
-    //background-size: cover;
+    margin-top: 1%;
+    //scrolling
     background-size: 100%;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
@@ -29,13 +29,24 @@ body::-webkit-scrollbar {
     width: 0 !important;
 }
 
+//
+#mainD {
+    overflow: hidden;
+}
+
+.row {
+    margin: 0px !important;
+}
+
 //header
 header {
     overflow: hidden;
+    padding: 0px !important;
+    margin-bottom: 25px;
 }
+
 header .form-group {
     margin: auto;
-    width: 65%;
     text-align: center;
     padding: 0px;
     position: relative;
@@ -54,6 +65,7 @@ header .form-group {
     }
 
     #inp {
+        min-width: 190px;
         display: inline-block;
         background: rgba(83, 154, 247, 0.733);
         border: none;
@@ -77,20 +89,20 @@ header .form-group {
 
 //grid
 #myGrid {
-    //width: 80%;
+    padding: 0%;
+
     .grid-container {
         display: grid;
-        padding: 5px;
-        //width: 80%;
-        //margin: auto;
+        text-align: center;
+        align-items: stretch;
 
         .grid-item {
             background-color: rgba(247, 247, 247, 0.233);
             font-size: 1.2em;
             text-align: center;
             margin: 5%;
-            min-height: 190px;
-            padding: 10%;
+            min-height: 120px;
+            padding: 15px;
 
             * {
                 color: rgb(255, 255, 255);
@@ -103,8 +115,7 @@ header .form-group {
 
             h1 {
                 font-size: 1.5em;
-                margin-top: 50%;
-
+                padding: 23%;
                 .dayTemp {
                     font-size: 1.8em;
                 }
@@ -115,7 +126,8 @@ header .form-group {
             }
 
             h3 {
-                font-size: 1em;
+                padding: 13%;
+                font-size: 1.2em;
             }
 
             i {
@@ -150,7 +162,7 @@ header .form-group {
     /* smartphone */
     #myGrid {
         .grid-container {
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
 
             .grid-item {
                 margin-left: 25%;
@@ -162,7 +174,7 @@ header .form-group {
 
 @media (min-width: 575px) {
     .grid-container {
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
     }
 
     .img-container {
@@ -186,10 +198,8 @@ header .form-group {
             float: right;
         }
     }
-    .form-group{
+
+    .form-group {
         float: right;
     }
-}
-.myGrid,.img-container{
-padding: 10%;
 }
