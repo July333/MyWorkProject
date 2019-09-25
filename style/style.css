@@ -45,7 +45,7 @@ header .form-group #search {
   background-image: url("../resources/images/search.png");
   background-size: cover;
   position: absolute;
-  margin: 1%;
+  margin: 2%;
   z-index: 1;
 }
 header .form-group #inp {
