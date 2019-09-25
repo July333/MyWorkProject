@@ -56,7 +56,6 @@ const getHisApi = async (selectedCity) => {
 }
 const futureWeather = async (selectedCity) => {
     arr = await getHisApi(selectedCity);
-    console.log(arr);
     let i = 0;
     let arrDate = arr[i].dt_txt.split(' ')[0];
     arrDate = arrDate.split('-')[2];

@@ -42,7 +42,7 @@ header .form-group #search {
   min-height: 20px;
   min-width: 20px;
   display: inline-block;
-  background-image: url("/images/search.png");
+  background-image: url("../images/search.png");
   background-size: cover;
   position: absolute;
   margin: 1%;
