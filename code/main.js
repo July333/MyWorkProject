@@ -73,7 +73,7 @@ const futureWeather = async (selectedCity) => {
                 tempIdentification='sunny'
             }
             $('#day' + inx + ' i').removeClass().addClass('wi wi-day-'+tempIdentification);
-            console.log('wi-day-'+arr[i].weather[0].main.toLowerCase());
+            $('#day' + inx +' #sunnyRainy').text(tempIdentification);
         }
         if (arrDate == '00') {
             $('#day' + inx + ' .nightTemp').html(arr[i].main.temp.toFixed(0));

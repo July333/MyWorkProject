@@ -4,14 +4,15 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
 }
-input[type=button] {
-  background-image: url("/images/search.png");
-  background-size: cover;
-}
 body {
   background-image: url("../images/blue.jpg");
   background-color: #21106e;
   background-size: 100%;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  width: 0 !important;
 }
 header {
   overflow: hidden;
@@ -21,43 +22,76 @@ header .input-group {
   padding: 0px;
   float: right;
 }
-h3 {
-  font-size: 1em;
+input[type=button] {
+  background-image: url("/images/search.png");
+  background-size: cover;
 }
-.dayTemp,
-.nightTemp {
-  font-size: 1.0025em;
+.cityName {
+  font-size: 1.5em;
+  font-weight: bold;
 }
-i {
-  font-size: 1.7em;
-  margin: 10%;
-  margin-top: 15%;
+#myGrid .grid-container {
+  display: grid;
+  padding: 5px;
+  width: 80%;
+  margin: auto;
 }
-h1 {
-  font-size: 1.4em;
+#myGrid .grid-container .grid-item {
+  background-color: rgba(247, 247, 247, 0.233);
+  font-size: 1.2em;
+  text-align: center;
+  margin: 5%;
+  min-height: 190px;
 }
-h1 .dayTemp {
+#myGrid .grid-container .grid-item * {
+  color: #ffffff;
+}
+#myGrid .grid-container .grid-item small {
+  float: left;
+}
+#myGrid .grid-container .grid-item h1 {
+  font-size: 1.5em;
+  margin-top: 50%;
+}
+#myGrid .grid-container .grid-item h1 .dayTemp {
   font-size: 1.8em;
 }
-@media (max-width: 575px) {
-  /* smartphone */
-  .grid-container {
-    grid-template-columns: auto;
-  }
-  .grid-container .grid-item {
-    margin-left: 25%;
-    margin-right: 25%;
-  }
+#myGrid .grid-container .grid-item #sunnyRainy {
+  float: left;
+}
+#myGrid .grid-container .grid-item h3 {
+  font-size: 1em;
+}
+#myGrid .grid-container .grid-item i {
+  font-size: 3em;
+  margin: 15%;
+  margin-top: 25%;
+}
+#myGrid .grid-container .grid-item .dayTemp,
+#myGrid .grid-container .grid-item .nightTemp {
+  font-size: 1.0025em;
 }
 .img-container {
   text-align: center;
 }
+input[type=image] {
+  color: #ffffff;
+}
+@media (max-width: 575px) {
+  /* smartphone */
+  #myGrid .grid-container {
+    grid-template-columns: auto;
+  }
+  #myGrid .grid-container .grid-item {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
 @media (min-width: 575px) {
-  /* tablet */
   .grid-container {
     grid-template-columns: auto auto auto auto;
   }
-  input[type=image] {
+  .img-container input[type=image] {
     -webkit-transform: translateX(-100%) rotate(-90deg);
     /* Safari */
     -moz-transform: translateX(-100%) rotate(-90deg);
@@ -75,18 +109,4 @@ h1 .dayTemp {
     transform-origin: top right;
     float: right;
   }
-}
-.grid-container {
-  display: grid;
-  padding: 5px;
-  width: 80%;
-  margin: auto;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 30px;
-  text-align: center;
-  opacity: 0.8;
-  margin: 5%;
-  min-height: 190px;
 }
