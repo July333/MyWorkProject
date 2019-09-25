@@ -7,109 +7,86 @@
 input[type=button] {
   background-image: url("/images/search.png");
   background-size: cover;
-  background-size: 100%;
 }
 body {
-  background-color: #69c6e2;
-  background-size: cover;
+  background-image: url("../images/blue.jpg");
+  background-color: #21106e;
+  background-size: 100%;
 }
-header #head {
+header {
   overflow: hidden;
-  padding-bottom: 0%;
 }
-header h1 {
+header .input-group {
   width: 65%;
-  display: inline-block;
   padding: 0px;
-}
-header #sideIm {
   float: right;
-  width: 20%;
-  max-width: 120px;
-  opacity: 0.8;
 }
-nav div a {
-  color: #f1eff8;
-  font-size: 1.2em;
+h3 {
+  font-size: 1em;
 }
-header nav div #search {
-  font-size: 1.2em;
-  background-color: #f1eff8;
+.dayTemp,
+.nightTemp {
+  font-size: 1.0025em;
 }
-header nav div #inp {
-  font-size: 1.2em;
+i {
+  font-size: 1.7em;
+  margin: 10%;
+  margin-top: 15%;
 }
-.myCard #weather {
-  position: relative;
-  padding: 0px;
-  max-width: 560px;
+h1 {
+  font-size: 1.4em;
 }
-.myCard #weather #n1 {
-  font-size: 1.2em;
+h1 .dayTemp {
+  font-size: 1.8em;
 }
-.myCard #weather #n1 span {
-  text-decoration: underline;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-img {
-  display: block;
-  float: left;
-}
-.card-subtitle {
-  padding-top: 10%;
-}
-.card-body {
-  width: 70%;
-  display: inline-block;
-  padding: 2%;
-  padding-top: 5%;
-  overflow: hidden;
-}
-@media (max-width: 420px) {
+@media (max-width: 575px) {
   /* smartphone */
   .grid-container {
     grid-template-columns: auto;
   }
-}
-@media (min-width: 420px) and (max-width: 760px) {
-  /* tablet */
-  .grid-container {
-    grid-template-columns: auto auto;
+  .grid-container .grid-item {
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }
-@media screen and (min-width: 760px) {
-  /* desktop */
+.img-container {
+  text-align: center;
+}
+@media (min-width: 575px) {
+  /* tablet */
   .grid-container {
     grid-template-columns: auto auto auto auto;
+  }
+  input[type=image] {
+    -webkit-transform: translateX(-100%) rotate(-90deg);
+    /* Safari */
+    -moz-transform: translateX(-100%) rotate(-90deg);
+    /* Firefox 3.6 Firefox 4 */
+    -ms-transform: translateX(-100%) rotate(-90deg);
+    /* IE9 */
+    -o-transform: translateX(-100%) rotate(-90deg);
+    /* Opera */
+    transform: translateX(-100%) rotate(-90deg);
+    /* W3C */
+    -webkit-transform-origin: top right;
+    -moz-transform-origin: top right;
+    -ms-transform-origin: top right;
+    -o-transform-origin: top right;
+    transform-origin: top right;
+    float: right;
   }
 }
 .grid-container {
   display: grid;
   padding: 5px;
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #261e4b;
   font-size: 30px;
   text-align: center;
-}
-.grid-item h5 {
-  font-size: 1.025em;
-  font-family: 'Times New Roman', Times, serif;
-  font-style: italic;
-  color: #261e4b;
-}
-.cur {
-  width: 68%;
-  display: inline-block;
-  padding: 0%;
-  overflow: hidden;
-}
-.inIM {
-  padding: 0px;
-}
-.hour {
-  margin: 0px;
+  opacity: 0.8;
+  margin: 5%;
+  min-height: 190px;
 }

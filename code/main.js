@@ -26,7 +26,7 @@ const getApi = async (selectedCity) => {
         + '&units=metric&appid=' + apiId);
     const cityWeather = await res.json();
     $('#current #cityName').text(cityWeather.name.toUpperCase());
-    $('#current .dayTemp').text(cityWeather.main.temp);
+    $('#current .dayTemp').text(cityWeather.main.temp.toFixed(0));
     let tempIdentification='sunny';
     tempIdentification=cityWeather.weather[0].main.toLowerCase();
     if(tempIdentification=='clouds'){
@@ -63,7 +63,7 @@ const futureWeather = async (selectedCity) => {
         arrDate = arr[i].dt_txt.split(' ')[1];
         arrDate = arrDate.split(':')[0];
         if (arrDate == '12') {
-            $('#day' + inx + ' .dayTemp').text(arr[i].main.temp);
+            $('#day' + inx + ' .dayTemp').text(arr[i].main.temp.toFixed(0));
             let tempIdentification='sunny';
             tempIdentification=arr[i].weather[0].main.toLowerCase();
             if(tempIdentification=='clouds'){
@@ -76,7 +76,7 @@ const futureWeather = async (selectedCity) => {
             console.log('wi-day-'+arr[i].weather[0].main.toLowerCase());
         }
         if (arrDate == '00') {
-            $('#day' + inx + ' .nightTemp').html(arr[i].main.temp);
+            $('#day' + inx + ' .nightTemp').html(arr[i].main.temp.toFixed(0));
             inx++;
         }
     }
