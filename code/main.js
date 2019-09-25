@@ -14,11 +14,19 @@ $(document).ready(function () {
     futureWeather("Tel Aviv");
 });
 //current temp by city name
+$('#inp').on('keyup', function (e) {
+    if (e.keyCode === 13) {
+        let city = $('#inp').val();
+        getApi(city);
+        futureWeather(city);
+        $('#inp').val("");
+    }
+});
 $('#search').on('click', function () {
-    let city = $('#inp').val();
-    getApi(city);
-    futureWeather(city);
-    $('#inp').val("");
+        let city = $('#inp').val();
+        getApi(city);
+        futureWeather(city);
+        $('#inp').val("");
 });
 const getApi = async (selectedCity) => {
     const res = await fetch('https://api.openweathermap.org/data/2.5/weather?q='
@@ -27,13 +35,13 @@ const getApi = async (selectedCity) => {
     const cityWeather = await res.json();
     $('#current #cityName').text(cityWeather.name.toUpperCase());
     $('#current .dayTemp').text(cityWeather.main.temp.toFixed(0));
-    let tempIdentification='sunny';
-    tempIdentification=cityWeather.weather[0].main.toLowerCase();
-    if(tempIdentification=='clouds'){
-        tempIdentification='cloudy'
+    let tempIdentification = 'sunny';
+    tempIdentification = cityWeather.weather[0].main.toLowerCase();
+    if (tempIdentification == 'clouds') {
+        tempIdentification = 'cloudy'
     }
-    if(tempIdentification=='clear'){
-        tempIdentification='sunny'
+    if (tempIdentification == 'clear') {
+        tempIdentification = 'sunny'
     }
     $('#current #sunnyRainy').text(tempIdentification);
     return cityWeather;
@@ -59,21 +67,21 @@ const futureWeather = async (selectedCity) => {
         arrDate = arrDate.split('-')[2];
     }
     let inx = 1;
-    for (i=i+1; i < arr.length; i++) {
+    for (i = i + 1; i < arr.length; i++) {
         arrDate = arr[i].dt_txt.split(' ')[1];
         arrDate = arrDate.split(':')[0];
         if (arrDate == '12') {
             $('#day' + inx + ' .dayTemp').text(arr[i].main.temp.toFixed(0));
-            let tempIdentification='sunny';
-            tempIdentification=arr[i].weather[0].main.toLowerCase();
-            if(tempIdentification=='clouds'){
-                tempIdentification='cloudy'
+            let tempIdentification = 'sunny';
+            tempIdentification = arr[i].weather[0].main.toLowerCase();
+            if (tempIdentification == 'clouds') {
+                tempIdentification = 'cloudy'
             }
-            if(tempIdentification=='clear'){
-                tempIdentification='sunny'
+            if (tempIdentification == 'clear') {
+                tempIdentification = 'sunny'
             }
-            $('#day' + inx + ' i').removeClass().addClass('wi wi-day-'+tempIdentification);
-            $('#day' + inx +' #sunnyRainy').text(tempIdentification);
+            $('#day' + inx + ' i').removeClass().addClass('wi wi-day-' + tempIdentification);
+            $('#day' + inx + ' #sunnyRainy').text(tempIdentification);
         }
         if (arrDate == '00') {
             $('#day' + inx + ' .nightTemp').html(arr[i].main.temp.toFixed(0));
