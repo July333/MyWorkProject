@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel="stylesheet" href="resources/bootstrap.min.css">
+    <link rel="stylesheet" href="weather-icons-master/css/weather-icons.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header class="container">
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <span>
+                    <input type="button" alt="Submit" width="50px" id="search">
+                    <input id="inp" class="col-auto form-control col-8" type='text' placeholder="Search another city">
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <input type="image" src="/images/down.png" alt="Submit" width="10px">
+    </section>
+
+    <section id="myGrid" class="container">
+        <div class="grid-container">
+            <div id="current" class="grid-item">
+                        <div class="card-header"><span id="cityName"></span></div>
+                        <small>today</small>
+                        <h1><span class="dayTemp"></span>°</h1>
+                        <h5 id="sunnyRainy"></h5>
+            </div>
+            <div id="day1" class="grid-item">
+                <h5 class="weekDay"></h5>
+                <i class="wi wi-day-sunny"></i>
+                <h3><span class="dayTemp"></span>°/<span class="nightTemp"></span>°</h3>
+                <h5></h5>
+            </div>
+            <div id="day2" class="grid-item">
+                    <h5 class="weekDay"></h5>
+                    <i class="wi wi-day-sunny"></i>
+                    <h3><span class="dayTemp"></span>°/<span class="nightTemp"></span>°</h3>
+                    <h5></h5>
+            </div>
+            <div id="day3" class="grid-item">
+                    <h5 class="weekDay"></h5>
+                    <i class="wi wi-day-sunny"></i>
+                    <h3><span class="dayTemp"></span>°/<span class="nightTemp"></span>°</h3>
+                    <h5></h5>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="resources/jquery.min.js"></script>
+    <script src='code/main.js'></script>
+</body>
+
+</html>
